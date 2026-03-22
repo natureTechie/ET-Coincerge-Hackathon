@@ -1,0 +1,79 @@
+/* ============================================================
+   nav.css  —  Top navigation bar
+   ============================================================ */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 40px;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--et-border);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--et-text);
+}
+.nav-et-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+.nav-ai-tag {
+  background: var(--et-orange);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 4px;
+}
+.nav-tab {
+  padding: 7px 16px;
+  border-radius: var(--r-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--et-muted);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+.nav-tab:hover { color: var(--et-text); }
+.nav-tab.active {
+  background: var(--et-surface);
+  color: var(--et-orange);
+  border-color: var(--et-border);
+}
+
+/* Badge */
+.nav-badge {
+  background: var(--et-orange);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.6px;
+}

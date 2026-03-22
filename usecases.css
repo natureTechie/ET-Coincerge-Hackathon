@@ -1,0 +1,100 @@
+/* ============================================================
+   usecases.css  —  Use case cards grid
+   ============================================================ */
+
+.usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.usecase-card {
+  background: var(--et-card);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.usecase-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--et-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.usecase-card:hover {
+  border-color: rgba(255,107,0,0.30);
+  transform: translateY(-4px);
+}
+.usecase-card:hover::after { transform: scaleX(1); }
+
+/* Icon wrap */
+.uc-icon-wrap {
+  width: 46px; height: 46px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.uc-icon-wrap img { width: 24px; height: 24px; }
+.uc-icon-wrap.orange { background: rgba(255,107,0,0.13); }
+.uc-icon-wrap.blue   { background: rgba(74,158,255,0.13); }
+.uc-icon-wrap.green  { background: rgba(0,214,143,0.13); }
+.uc-icon-wrap.purple { background: rgba(168,85,247,0.13); }
+.uc-icon-wrap.gold   { background: rgba(245,166,35,0.13); }
+
+/* Tag pill */
+.uc-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+.orange-tag { background: rgba(255,107,0,0.12); color: var(--et-orange); }
+.blue-tag   { background: rgba(74,158,255,0.12); color: var(--et-blue); }
+.green-tag  { background: rgba(0,214,143,0.12);  color: var(--et-green); }
+.purple-tag { background: rgba(168,85,247,0.12); color: var(--et-purple); }
+.gold-tag   { background: rgba(245,166,35,0.12); color: var(--et-gold); }
+
+.usecase-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.usecase-card p {
+  font-size: 0.8rem;
+  color: var(--et-muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* Feature list */
+.uc-features { list-style: none; }
+.uc-features li {
+  font-size: 0.78rem;
+  color: var(--et-muted);
+  padding: 4px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.45;
+}
+.uc-features li::before {
+  content: '→';
+  color: var(--et-orange);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  margin-top: 1px;
+}

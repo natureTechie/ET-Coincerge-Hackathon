@@ -1,0 +1,136 @@
+/* ============================================================
+   base.css  —  CSS variables, reset, shared utilities
+   ET Concierge Agentic AI Platform
+   ============================================================ */
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --et-orange:      #FF6B00;
+  --et-dark-orange: #E55A00;
+  --et-gold:        #F5A623;
+
+  /* Surfaces */
+  --et-black:   #0A0A0A;
+  --et-deep:    #111318;
+  --et-surface: #181C24;
+  --et-card:    #1E2330;
+  --et-border:  rgba(255, 107, 0, 0.18);
+
+  /* Text */
+  --et-text:  #F0EDE8;
+  --et-muted: #8A8F9C;
+
+  /* Accents */
+  --et-green:  #00D68F;
+  --et-blue:   #4A9EFF;
+  --et-purple: #A855F7;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+
+  /* Radii */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--et-black);
+  color: var(--et-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+button { font-family: var(--font-body); cursor: pointer; }
+a { color: var(--et-orange); text-decoration: none; }
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.section {
+  display: none;
+  padding: 90px 0 48px;
+  min-height: 100vh;
+}
+.section.active { display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Section Header ─────────────────────────────────────────── */
+.section-header {
+  margin-bottom: 32px;
+}
+.section-header .tag {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--et-orange);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+.section-header p {
+  color: var(--et-muted);
+  font-size: 0.92rem;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ── Chips ──────────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.chip.orange { background: rgba(255,107,0,0.12); color: var(--et-orange); }
+.chip.blue   { background: rgba(74,158,255,0.12); color: var(--et-blue); }
+.chip.green  { background: rgba(0,214,143,0.12);  color: var(--et-green); }
+.chip.purple { background: rgba(168,85,247,0.12); color: var(--et-purple); }
+.chip.gold   { background: rgba(245,166,35,0.12); color: var(--et-gold); }
+
+/* ── Footer Bar ─────────────────────────────────────────────── */
+.footer-bar {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--et-muted);
+  border-top: 1px solid var(--et-border);
+  margin-top: 40px;
+}
+.footer-bar span { color: var(--et-orange); }
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,107,0,0.22);
+  border-radius: 3px;
+}

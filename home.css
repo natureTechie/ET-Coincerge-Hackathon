@@ -1,0 +1,197 @@
+/* ============================================================
+   home.css  —  Hero, agent cards, product logos, tech stack
+   ============================================================ */
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 64px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%,  rgba(255,107,0,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(245,166,35,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,107,0,0.10);
+  border: 1px solid rgba(255,107,0,0.30);
+  color: var(--et-orange);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero h1 span { color: var(--et-orange); }
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--et-muted);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+/* Stats row */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.hero-stat { text-align: center; }
+.hero-stat .val {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--et-orange);
+  display: block;
+}
+.hero-stat .lbl {
+  font-size: 0.72rem;
+  color: var(--et-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product logos strip */
+.product-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+.product-logos img {
+  width: 88px;
+  height: 34px;
+  object-fit: contain;
+  filter: brightness(0.7);
+  transition: filter 0.25s;
+}
+.product-logos img:hover { filter: brightness(1); }
+
+/* ── Agent Cards Grid ───────────────────────────────────────── */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 44px 0 28px;
+  animation: fadeUp 0.6s 0.45s ease both;
+}
+
+.agent-card {
+  background: var(--et-card);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s, border-color 0.22s;
+}
+.agent-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--et-orange);
+}
+.agent-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(circle at 50% 0%, rgba(255,107,0,0.08), transparent 70%);
+}
+.agent-card:hover::before { opacity: 1; }
+
+.agent-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.agent-icon img { width: 24px; height: 24px; }
+.agent-icon.orange { background: rgba(255,107,0,0.14); }
+.agent-icon.blue   { background: rgba(74,158,255,0.14); }
+.agent-icon.green  { background: rgba(0,214,143,0.14); }
+.agent-icon.purple { background: rgba(168,85,247,0.14); }
+.agent-icon.gold   { background: rgba(245,166,35,0.14); }
+
+.agent-card h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
+.agent-card p  { font-size: 0.75rem; color: var(--et-muted); line-height: 1.55; }
+
+.agent-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  color: var(--et-green);
+  margin-top: 12px;
+  font-family: var(--font-mono);
+}
+.agent-status::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--et-green);
+  animation: pulse 1.6s infinite;
+}
+
+/* ── Tech Stack Bar ─────────────────────────────────────────── */
+.tech-stack-bar {
+  background: var(--et-surface);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-lg);
+  padding: 24px 28px;
+  animation: fadeUp 0.6s 0.5s ease both;
+}
+.ts-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.ts-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

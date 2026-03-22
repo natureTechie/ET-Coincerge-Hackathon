@@ -1,0 +1,126 @@
+/* ============================================================
+   architecture.css  —  System design diagram
+   ============================================================ */
+
+.arch-diagram {
+  background: var(--et-surface);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-xl);
+  padding: 36px 40px;
+  margin: 24px 0;
+  position: relative;
+  overflow: hidden;
+}
+.arch-diagram::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 30% at 50% 0%, rgba(255,107,0,0.05), transparent);
+  pointer-events: none;
+}
+
+/* Layer */
+.arch-layer { margin-bottom: 16px; }
+
+.arch-layer-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--et-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.arch-layer-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--et-border), transparent);
+}
+
+.arch-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Node */
+.arch-node {
+  background: var(--et-card);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.arch-node:hover {
+  border-color: var(--et-orange);
+  transform: translateY(-2px);
+}
+.arch-node img {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+}
+.arch-node.primary {
+  border-color: rgba(255,107,0,0.35);
+  background: rgba(255,107,0,0.06);
+}
+.arch-node.featured {
+  flex: 1;
+  border-color: var(--et-orange);
+  background: rgba(255,107,0,0.07);
+  gap: 14px;
+}
+.arch-node.featured strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--et-orange);
+  margin-bottom: 3px;
+}
+.arch-node.featured small {
+  font-size: 0.72rem;
+  color: var(--et-muted);
+  font-weight: 400;
+}
+.arch-node.featured img { width: 28px; height: 28px; }
+
+/* Connector arrow */
+.arch-connector {
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--et-orange);
+  opacity: 0.5;
+  margin: 4px 0;
+}
+
+/* Flow steps */
+.arch-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+.flow-step {
+  background: var(--et-card);
+  border: 1px solid var(--et-border);
+  border-radius: var(--r-md);
+  padding: 18px;
+  transition: border-color 0.2s;
+}
+.flow-step:hover { border-color: rgba(255,107,0,0.35); }
+.flow-num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--et-orange);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.flow-step h4 { font-size: 0.86rem; font-weight: 600; margin-bottom: 7px; }
+.flow-step p  { font-size: 0.78rem; color: var(--et-muted); line-height: 1.55; }
