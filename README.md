@@ -1,4 +1,6 @@
 # ET Concierge — Agentic AI Platform
+## By Yadnesh Somashe 
+
 ### Prototype - · Economic Times Ecosystem
 
 ---
